@@ -95,3 +95,16 @@ function whatIsInAName(collection, source) {
 }
 
 whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 });
+
+
+// Spinal Tap CasePassed
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+//SOLUTION
+
+function spinalCase(str) {
+  let regex = /\s+|_+/g;
+ str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+ return str.replace(regex, "-").toLowerCase()
+}
+
+spinalCase('This Is Spinal Tap');
