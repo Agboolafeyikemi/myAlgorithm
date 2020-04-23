@@ -147,3 +147,27 @@ function myReplace(str, before, after) {
   }
   
   myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+
+
+
+
+
+//  Missing letters
+//   Find the missing letter in the passed letter range and return it.
+  
+//   If all letters are present in the range, return undefined.
+// SOLUTION
+  function fearNotLetter(str) {
+    let startCode = str.charCodeAt(0)
+    for(let i = 0; i < str.length; i++){
+      if(str.charCodeAt(i) !== startCode){
+      return  String.fromCharCode(startCode)
+      }else{
+        startCode++
+      }
+    }
+    return startCode;
+  }
+  
+  fearNotLetter("abce");
+  
