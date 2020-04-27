@@ -255,3 +255,28 @@ function convertHTML(str) {
 
 // test here
 convertHTML("Dolce & Gabbana");
+
+
+// Sum All Odd Fibonacci Numbers
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+// The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+//SOLUTION
+
+function sumFibs(num) {
+  let arr = [1, 1]
+  let nextFib = 0;
+  
+    while ( (nextFib = arr[0] + arr[1]) <= num){
+         arr.unshift(nextFib) 
+    }
+   return arr = arr.filter(fib => fib % 2 !== 0)
+       .reduce((acc, cur)=> arr = acc + cur)
+  
+  
+  return arr
+}
+
+sumFibs(10);
