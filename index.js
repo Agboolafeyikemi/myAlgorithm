@@ -379,3 +379,21 @@ function steamrollArray(arr) {
   return arr.reduce((prev, curr) => prev.concat(Array.isArray(curr) ? steamrollArray(curr) : curr), [])
  
  };
+
+
+//  Binary Agents
+//  Return an English translated sentence of the passed binary string.
+ 
+//  The binary string will be space separated.
+// SOLUTION
+
+ function binaryAgent(str) {
+  let result = [];
+   str.split(' ').map(char => {
+   let par =  parseInt(char, 2)
+    result.push(String.fromCharCode(par))
+   return result
+  });
+ return result.join('')
+}
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
