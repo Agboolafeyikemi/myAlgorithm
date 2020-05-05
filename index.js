@@ -431,3 +431,15 @@ truthCheck([{"single": ""}, {"single": "double"}], "single")
 // sumTwoAnd(3) returns 5.
 
 // If either argument isn't a valid number, return undefined.
+//SOLUTION
+
+function addTogether() {
+  var args = Array.from(arguments);
+  return args.some(n => typeof n !== "number")
+    ? undefined
+    : args.length > 1
+    ? args.reduce((acc, n) => (acc += n), 0)
+    : n => (typeof n === "number" ? n + args[0] : undefined);
+}
+
+addTogether(2, 3);
