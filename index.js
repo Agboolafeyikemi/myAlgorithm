@@ -518,3 +518,30 @@ function factorial (n){
   return n * factorial(n - 1);
 }
 
+//The button's initial text label is 0. After each click,
+//the button must increment by . 
+//Recall that the button's text label is the JS object's innerHTML property.
+
+//Solution
+//HTML
+// <!-- Enter your HTML code here -->
+// <!DOCTYPE html>
+// <html>
+//     <head>
+//         <meta charset="utf-8">
+//           <link rel="stylesheet" href="css/button.css" type="text/css">
+//         <title>Button</title>
+//     </head>
+//     <body>
+//    <button id="btn">0</button>
+//     </body>
+//     <script src="js/button.js" type="text/javascript"></script>
+// </html>
+
+JS
+function addOne () {
+  const el = parseInt(document.getElementById('btn').innerHTML ++)
+}
+const buttonElement = document.getElementById('btn');
+buttonElement.addEventListener('click', addOne )
+
