@@ -502,8 +502,19 @@ bob.getFullName();
 // Complete the aVeryBigSum function below.
 
 function aVeryBigSum(ar) {
-
   return ar.reduce((num, cur) => {
     return  num + cur
   })
- }
+}
+
+// Implement a function named factorial that has one parameter: an integer, . It must return the value of  (i.e.,  factorial).
+//Explanation 4! = 4*3*2*1 = 24
+//Solution
+function factorial (n){
+  if (n === 0){
+      return 1
+  }
+
+  return n * factorial(n - 1);
+}
+
