@@ -545,3 +545,15 @@ function addOne () {
 const buttonElement = document.getElementById('btn');
 buttonElement.addEventListener('click', addOne )
 
+//RESERVED A STRING NOT USING REVERSE FUNC
+//SOLUTION 
+
+function reserve(str){
+  let reserved = '';
+  for(let char of str){
+    reserved = char + reserved
+  }
+  return reserved
+}
+
+reserve('i love ibukun')
