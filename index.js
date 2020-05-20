@@ -556,4 +556,23 @@ function reserve(str){
   return reserved
 }
 
-reserve('i love ibukun')
+reserve('i loved ibk');
+
+
+// Complete the function in the editor. It has one parameter: an array, a, of objects. Each object in the array has two integer properties denoted by x and y. 
+// The function must return a count of all such objects  in array  a that satisfy o.x === o.y.
+//Solution
+
+function getCount(objects) {
+    
+    let n = 0
+  const func = (ar)=> {
+    if(ar.x === ar.y){
+    return n = n + 1;
+  }else {
+    return n
+  }
+  }
+  objects.forEach(func)
+    return n;
+}
