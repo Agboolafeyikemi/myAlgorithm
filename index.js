@@ -593,3 +593,61 @@ const twoSum = function(nums, target) {
   }
   };
   twoSum([2,3,4], 7);
+
+
+
+  // Given a string, find the length of the longest substring without repeating characters.
+// Solution
+  // var lengthOfLongestSubstring = function(s) {
+//     const exited = []
+//    const arr = s.split('')
+//     for(let i = 0; i < arr.length; i++){
+//       if(!exited.includes(arr[i])){
+//         exited.push(arr[i])
+//       }
+      
+//     }
+//     return exited.length
+    
+// };
+// lengthOfLongestSubstring("pwwkew");
+
+// function morethanOne (arr){
+//   let cur = 0;
+//   let hash = {};
+//  for(let i=0 ; i <arr.length; i++){
+//   if (hash[arr[i]] == null){
+//     cur += 1
+//   }else {
+//    return arr[i]
+//   }
+//   hash[arr[i]] = i;
+//  }
+// }
+
+// morethanOne([1,2,3,4,5,6,3,3])
+
+
+
+
+// var moveZeroes = function(nums) {
+//     const len = nums.length;
+//     let i;
+//     for (i = 0; i < len; i++) {
+//         if (nums[i] === 0) {
+//             nums.push(nums.splice(i, 1));
+//             i = i - 1;
+//         }
+//     }
+// };
+
+// var moveZeroes = function(nums) {
+//     const len = nums.length;
+//     let i;
+//     for (i = 0; i < len; i++) {
+//         if (nums[i] === 0) {
+//             nums.push(nums.splice(i, 1));
+//             i = i - 1;
+//         }
+//     }
+// };
