@@ -651,3 +651,55 @@ const twoSum = function(nums, target) {
 //         }
 //     }
 // };
+
+
+
+// Algoriythms that print all currency in ATM as customer demanded
+//Solution
+
+function calcAmounts(amount){
+  let currency = {}
+  let oneTH = 1000;
+  let fiveH = 500;
+  let twoH = 200;
+  let oneH = 100;
+  let fiftyN = 50;
+
+while(amount !== 0) {
+ if(amount >= oneTH) {
+   currency.Onethousand = parseInt(amount / oneTH);
+   amount = parseInt((amount / oneTH - currency.Onethousand ) * 1000);
+ }
+ if(amount >= fiveH ){
+   currency.fiveHundred = parseInt(amount / fiveH);
+     amount = parseInt(amount - fiveH)
+ }
+  if(amount >= twoH){
+     currency.twoHundred = parseInt(amount / twoH);
+     if (amount % twoH === 0) {
+       currency.twoHundred = 1;
+     }
+     amount = amount % twoH;
+ }
+ if(amount >= oneH){
+     currency.onehundred = parseInt(amount / oneH);
+      if (amount % oneH === 0) {
+       currency.onehundred = 1;
+     }
+   amount = (amount % oneH) ;
+ 
+ }
+ if(amount >= fiftyN){
+   currency.fiftyNaira = parseInt(amount / fiftyN);
+    if (amount % oneH === 0) {
+     currency.onehundred = 1;
+   }
+   amount = amount % fiftyN;
+ }
+ return currency;
+}
+
+return currency;
+}
+
+calcAmounts(109650);
