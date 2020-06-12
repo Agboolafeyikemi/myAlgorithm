@@ -703,3 +703,46 @@ return currency;
 }
 
 calcAmounts(109650);
+
+
+
+// function Dispenser(amount, arr) {
+//   if (amount === 0) {
+//     return
+//   }
+//   let currency = {};
+//   for (let i = 0 ; i < arr.length; i++) {
+//      if (amount % arr[i] !== 0) {
+//         currency[arr[i]] = parseInt(amount / arr[i]);
+//         amount =  amount % arr[i];
+//      }
+//      else if(amount % arr[i] === 0) {
+//       currency[arr[i]] = parseInt(amount / arr[i]);
+//       amount = 0 ;
+//     }
+//   }
+//    return currency;
+// }
+
+// Dispenser(1223, [1000, 500, 200, 100, 50, 20, 10]);
+
+
+
+// function that merge two arrays alternatively
+
+//solution
+
+// function mergeArray(arr1, arr2) {
+//   let arr3 = [];
+ 
+//   for (let i = 0; i < arr1.length; i++) {
+//       arr3.push(arr1[i], arr2[i])
+//    }
+//      if(arr1.length < arr2.length) {
+//        arr3.push(...arr2.splice(arr1.length));
+//      }
+//     return arr3;
+    
+//  };
+ 
+//   mergeArray([1,3,5] ,[2, 4, 6, 7, 8]);
