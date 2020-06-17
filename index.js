@@ -625,9 +625,7 @@ const twoSum = function(nums, target) {
 //  }
 // }
 
-// morethanOne([1,2,3,4,5,6,3,3])
-
-
+// morethanOne([1,2,3,4,5,6,3,3]);
 
 
 // var moveZeroes = function(nums) {
@@ -960,3 +958,58 @@ function threeSum(nums) {
   ht.keys().forEach(function(key){
     console.log(ht.get(key));
   })
+
+
+  /**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+  let strS = {}
+  let strT = {}
+  if(s.length !== t.length) return false 
+  for(let i = 0; i < s.length; i++) {
+    if(strS[s[i]] >= 0 && strT[t[i]] >= 0) {
+      strS[s[i]] += 2;
+      strT[t[i]] += 2;
+    }
+    else {
+    strS[s[i]] = 1;
+    strT[t[i]] = 1;
+    }
+  }
+     
+    for(let char in strS) {
+        if (!(char in strT)) return false;
+        if (strT[char] !== strS[char]) return false;
+    }
+    
+    return true;
+};
+isAnagram( "anagram", "nagaram");
+
+
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    
+    const sCount = charCount(s);
+    const tCount = charCount(t);
+    
+    for(let char in sCount) {
+        if (!(char in tCount)) return false;
+        if (tCount[char] !== sCount[char]) return false;
+    }
+    
+    return true;
+};
+
+var charCount = function(string) {
+    const chars = {};
+    
+    for(let char of string) {
+        chars[char] = (chars[char] || 0) + 1;
+    }
+    
+    return chars;
+}
