@@ -989,8 +989,6 @@ var isAnagram = function(s, t) {
 isAnagram( "anagram", "nagaram");
 
 
-
-
 // Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 // Note:// Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
@@ -1007,7 +1005,6 @@ var singleNumber = function(nums) {
 };
 
 singleNumber([4,1,2,1,2]);
-
 
 
 // Given two strings s and t which consist of only lowercase letters.
