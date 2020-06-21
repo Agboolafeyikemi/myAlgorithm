@@ -1033,3 +1033,17 @@ function maxSubarraySum(arr, num){
 }
 
 maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+
+
+// Given a non-empty array of integers, return the k most frequent elements.
+//Solution
+var topKFrequent = function(nums, k) {
+  obj = {};
+  nums.forEach((num)=> obj[num] = (obj[num]||0) + 1);
+  console.log(Object.keys(obj).sort((a,b)=> obj[b]-obj[a]))
+  console.log(obj)
+  return Object.keys(obj).sort((a,b)=> obj[b]-obj[a]).slice(0,k)
+}
+
+topKFrequent([1], 2);
