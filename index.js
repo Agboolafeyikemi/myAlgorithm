@@ -856,7 +856,7 @@ function threeSum(nums) {
 
 
 
-/ var threeSumClosest = function(nums, target) {
+ var threeSumClosest = function(nums, target) {
   //   let Maxvalue = 20;
   //   nums.sort((a, b)=> (a - b))
   //    if(nums.length < 3) return nums;
@@ -1072,3 +1072,27 @@ var removeDuplicates = function(nums) {
 };
 
 removeDuplicates([1,1,2]);
+
+
+
+// Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+
+// Your algorithm's runtime complexity must be in the order of O(log n).
+
+// If the target is not found in the array, return [-1, -1].
+
+var searchRange = function(nums, target) {
+    for(let i =0; i< nums.length; i++){
+        if(nums[i] === target){
+            for(let j=nums.length-1;j>=i;j--){
+                if(nums[j]===target){
+                    return [i,j];
+                }
+            }
+        }
+    }
+    
+    return [-1, -1];
+};
+
+searchRange([5,7,7,8,8,10], 8);
