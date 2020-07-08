@@ -856,7 +856,7 @@ function threeSum(nums) {
 
 
 
-/ var threeSumClosest = function(nums, target) {
+ var threeSumClosest = function(nums, target) {
   //   let Maxvalue = 20;
   //   nums.sort((a, b)=> (a - b))
   //    if(nums.length < 3) return nums;
@@ -1072,3 +1072,94 @@ var removeDuplicates = function(nums) {
 };
 
 removeDuplicates([1,1,2]);
+
+
+
+// Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+
+// Your algorithm's runtime complexity must be in the order of O(log n).
+
+// If the target is not found in the array, return [-1, -1].
+
+var searchRange = function(nums, target) {
+  for(let i =0; i< nums.length; i++){
+    if(nums[i] === target){
+      for(let j=nums.length-1;j>=i; j--){
+        if(nums[j]===target){
+          return [i,j];
+        }
+      }
+    }
+  }
+    
+  return [-1, -1];
+};
+
+searchRange([5,7,7,8,8,10], 8);
+
+
+// Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+// You may assume no duplicates in the array.
+
+//SOLUTION
+
+var searchInsert = function(nums, target) {
+ 
+  if(nums.indexOf(target) === -1){
+    nums.push(target)
+    nums.sort((a,b) => a -b )
+    return nums.indexOf(target)
+  }
+  let middle = Math.floor((nums.length - 1) / 2)
+  while (middle < nums.length) {
+  let k = middle -1;
+  let x = middle + 1;
+  if(nums[middle] > target){
+     middle = k
+  }
+  else if(nums[middle] < target){
+    middle = x
+  } 
+  else  {
+    return nums.indexOf(target);
+  }
+  
+  }
+};
+searchInsert([1,3,5,6], 2);
+
+
+
+// Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+// Integers in each row are sorted from left to right.
+// The first integer of each row is greater than the last integer of the previous row.
+
+
+var searchMatrix = function(matrix, target) {
+  var sortedArray= matrix.reduce((flattenedMatrix, row) => {
+    return [...flattenedMatrix, ...row]
+  }, [])
+  
+  const bisect = (array) => {
+   let mid = Math.floor(array.length / 2);
+    if(array[mid] === target) return true;
+    if(array.length <= 1) return false;
+    if(array[mid -1] < target && array[mid +1] > target) return false;
+  
+     const [high, low] = [array.slice(mid + 1), array.slice(0,mid)]
+     return target <= low[low.length -1]? bisect(low) : bisect(high)
+  
+  
+  }
+  return bisect(sortedArray);
+  
+  }
+  
+  searchMatrix([
+    [1,   3,  5,  7],
+    [10, 11, 16, 20],
+    [23, 30, 34, 50]
+  ], 13);
+  
