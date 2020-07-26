@@ -1212,4 +1212,4 @@ function findMin(nums) {
   }
   return nums[l];
 }
- findMin([4,5,6,7,0,1,2])
+ findMin([4,5,6,7,0,1,2]);
