@@ -1232,3 +1232,9 @@ function findMin(nums) {
 
 // You may assume no duplicate exists in the array.
 //Solution
+
+
+// Find the minimum element.
+
+// You may assume no duplicate exists in the array.
+//Solution
