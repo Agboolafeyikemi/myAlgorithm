@@ -1213,3 +1213,32 @@ function findMin(nums) {
   return nums[l];
 }
  findMin([4,5,6,7,0,1,2]);
+
+//  Write a function that takes a string as input and reverse only the vowels of a string.
+// Solution
+var reverseVowels = function(s) {
+  const array = [...s]
+  const vowels = 'aeiouAEIOU'
+  let first = 0
+  let end = array.length-1
+  while(first < end) {
+      if(vowels.includes(array[first]) && vowels.includes(array[end])) {
+          const change = array[first]
+          array[first] = array[end]
+          array[end] = change
+          first++
+          end--
+      } else if(vowels.includes(array[first])) {
+          end--
+      } else if(vowels.includes(array[end])) {
+         first ++
+
+      } else {
+          first++
+          end--
+      }
+  }
+  return array.join('')
+};
+
+reverseVowels('hello');
