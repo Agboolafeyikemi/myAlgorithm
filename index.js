@@ -1214,27 +1214,31 @@ function findMin(nums) {
 }
  findMin([4,5,6,7,0,1,2]);
 
- // Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+//  Write a function that takes a string as input and reverse only the vowels of a string.
+// Solution
+var reverseVowels = function(s) {
+  const array = [...s]
+  const vowels = 'aeiouAEIOU'
+  let first = 0
+  let end = array.length-1
+  while(first < end) {
+      if(vowels.includes(array[first]) && vowels.includes(array[end])) {
+          const change = array[first]
+          array[first] = array[end]
+          array[end] = change
+          first++
+          end--
+      } else if(vowels.includes(array[first])) {
+          end--
+      } else if(vowels.includes(array[end])) {
+         first ++
 
-// (i.e.,  [0,1,2,4,5,6,7] might become  [4,5,6,7,0,1,2]).
+      } else {
+          first++
+          end--
+      }
+  }
+  return array.join('')
+};
 
-// Find the minimum element.
-
-// You may assume no duplicate exists in the array.
-//Solution
-
-
-// Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
-
-// (i.e.,  [0,1,2,4,5,6,7] might become  [4,5,6,7,0,1,2]).
-
-// Find the minimum element.
-
-// You may assume no duplicate exists in the array.
-//Solution
-
-
-// Find the minimum element.
-
-// You may assume no duplicate exists in the array.
-//Solution
+reverseVowels('hello');
