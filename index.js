@@ -1238,3 +1238,37 @@ function findMin(nums) {
 
 // You may assume no duplicate exists in the array.
 //Solution
+
+
+//Given a 32-bit signed integer, reverse digits of an integer.
+
+// Note:
+// Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+
+
+//solution
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+  let s = Math.abs(x).toString();
+  let arr = s.split('').reverse();
+  let num = Number(arr.join(''))
+  
+
+  //for (let i = s.length - 1; i >= 0; i--) { other way to reverse
+  //   arr.push(s[i])
+ // }
+  if(num > 2**31 - 1){
+      return 0
+  }
+  if(x < 0){
+   num *= -1  
+   }
+  
+  return num;
+};
+
+reverse(-1234)
