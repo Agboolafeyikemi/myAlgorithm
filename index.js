@@ -1129,8 +1129,6 @@ var searchInsert = function(nums, target) {
 };
 searchInsert([1,3,5,6], 2);
 
-
-
 // Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
 // Integers in each row are sorted from left to right.
@@ -1276,6 +1274,7 @@ var romanToInt = function(s) {
     D: 500,
     M: 1000,
   } 
+  
   let sum = 0;
   for(let i = 0; i<s.length; i++){
     if(data[s[i]] < data[s[i + 1]]){
@@ -1286,3 +1285,28 @@ var romanToInt = function(s) {
   }
     return sum;
 };
+
+
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+//solution
+
+var longestCommonPrefix = function(arr) {
+  if (!arr.length) return "";
+  let prefix = "";
+  for (let i = 0; i < arr[0].length; i++) {
+      for (let j = 0; j < arr.length-1; j++) {
+        console.log(arr.length-1, 'length')
+        console.log(arr[j][i], 'arr[j][i]')
+        if (arr[j][i] !== arr[j+1][i]) return prefix;
+      }
+      prefix += arr[0][i];
+  }
+  return prefix;
+  // Time Complexity: O(M*N), M = length of shortest word, N = length of given array
+  // Space Complexity: O(1)
+};
+longestCommonPrefix(["flower","flow","floight", "flo"])
