@@ -1309,4 +1309,17 @@ var longestCommonPrefix = function(arr) {
   // Time Complexity: O(M*N), M = length of shortest word, N = length of given array
   // Space Complexity: O(1)
 };
-longestCommonPrefix(["flower","flow","floight", "flo"])
+longestCommonPrefix(["flower","flow","floight", "flo"]);
+
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+
+//Solution
+
+
+
