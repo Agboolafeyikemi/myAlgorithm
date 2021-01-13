@@ -1200,12 +1200,16 @@ var search = function (nums, target) {
 
 function findMin(nums) {
   let l = 0;
+  
   let r = nums.length - 1;
+
   // console.log(r)
   while (l < r) {
     const m = Math.floor((l + r) / 2);
+
     // console.log(m)
     if (nums[m] > nums[r]) l = m + 1;
+
     else r = m;
   }
   return nums[l];
@@ -1265,6 +1269,7 @@ reverseVowels('hello');
 //SOLUTION
 
 var romanToInt = function(s) {
+
   const data = {
     I: 1,
     V :5,
@@ -1277,10 +1282,15 @@ var romanToInt = function(s) {
   
   let sum = 0;
   for(let i = 0; i<s.length; i++){
+
     if(data[s[i]] < data[s[i + 1]]){
+
      sum -= data[s[i]]
+
     }else{
+
      sum += data[s[i]]
+
     }
   }
     return sum;
@@ -1295,7 +1305,7 @@ var romanToInt = function(s) {
 //solution
 
 var longestCommonPrefix = function(arr) {
-  
+
   if (!arr.length) return "";
 
   let prefix = "";
