@@ -1178,10 +1178,15 @@ var search = function (nums, target) {
   // difference is here
       else if (nums[l] <= nums[mid]) {
           if (nums[l] <= target && target < nums[mid]) r = mid - 1;
+
           else l = mid + 1;
+
       } else {
+
           if (nums[mid] < target && target <= nums[r]) l = mid + 1;
+
           else r = mid - 1;
+          
       }
   }
   return -1;
@@ -1200,7 +1205,7 @@ var search = function (nums, target) {
 
 function findMin(nums) {
   let l = 0;
-  
+
   let r = nums.length - 1;
 
   // console.log(r)
