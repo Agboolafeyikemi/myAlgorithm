@@ -1295,8 +1295,9 @@ var romanToInt = function(s) {
 //solution
 
 var longestCommonPrefix = function(arr) {
-  if (!arr.length) return "";
   
+  if (!arr.length) return "";
+
   let prefix = "";
   for (let i = 0; i < arr[0].length; i++) {
 
