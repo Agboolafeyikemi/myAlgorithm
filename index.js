@@ -1186,7 +1186,7 @@ var search = function (nums, target) {
           if (nums[mid] < target && target <= nums[r]) l = mid + 1;
 
           else r = mid - 1;
-          
+
       }
   }
   return -1;
@@ -1345,4 +1345,35 @@ longestCommonPrefix(["flower","flow","floight", "flo"]);
 
 //Solution
 
-
+var isValid = function(s) {
+    let stack = [];
+    
+    // Not paired
+    if(s.length%2 !== 0){
+        return false;
+    }else{
+        for(let i = 0; i < s.length;i++){
+            // Store
+            if(s[i]==='('||s[i]==='['||s[i]==='{'){
+                stack.push(s[i]);
+            }
+            else{
+                switch(s[i]){
+                    case ')':
+                        if(stack.pop()!=='(') return false; 
+                        break;
+                    case ']':
+                        if(stack.pop()!=='[') return false;
+                        break;
+                    case '}':
+                        if(stack.pop()!=='{') return false;
+                        break;
+                }
+            }
+        }
+    }
+    
+    if(stack.length !==0) return false;
+    
+    return true;
+};
