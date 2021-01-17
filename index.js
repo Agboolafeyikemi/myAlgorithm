@@ -1377,3 +1377,213 @@ var isValid = function(s) {
     
     return true;
 };
+
+// I can be placed before V (5) and X (10) to make 4 and 9. 
+// X can be placed before L (50) and C (100) to make 40 and 90. 
+// C can be placed before D (500) and M (1000) to make 400 and 900.
+// Given a roman numeral, convert it to an integer.
+
+//SOLUTION
+
+var romanToInt = function(s) {
+
+  const data = {
+    I: 1,
+    V :5,
+    X :10,
+    L :50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  } 
+  
+  let sum = 0;
+  for(let i = 0; i<s.length; i++){
+
+    if(data[s[i]] < data[s[i + 1]]){
+
+     sum -= data[s[i]]
+
+    }else{
+
+     sum += data[s[i]]
+
+    }
+  }
+    return sum;
+};
+
+
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+//solution
+
+var longestCommonPrefix = function(arr) {
+
+  if (!arr.length) return "";
+
+  let prefix = "";
+  for (let i = 0; i < arr[0].length; i++) {
+
+      for (let j = 0; j < arr.length-1; j++) {
+
+        console.log(arr.length-1, 'length')
+
+        console.log(arr[j][i], 'arr[j][i]')
+
+        if (arr[j][i] !== arr[j+1][i]) return prefix;
+
+      }
+      prefix += arr[0][i];
+  }
+  return prefix;
+  // Time Complexity: O(M*N), M = length of shortest word, N = length of given array
+  // Space Complexity: O(1)
+};
+longestCommonPrefix(["flower","flow","floight", "flo"]);
+
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+
+// Open brackets must be closed in the correct order.
+
+
+//Solution
+
+var isValid = function(s) {
+    let stack = [];
+    
+    // Not paired
+    if(s.length%2 !== 0){
+        return false;
+    }else{
+        for(let i = 0; i < s.length;i++){
+            // Store
+            if(s[i]==='('||s[i]==='['||s[i]==='{'){
+                stack.push(s[i]);
+            }
+            else{
+                switch(s[i]){
+                    case ')':
+                        if(stack.pop()!=='(') return false; 
+                        break;
+                    case ']':
+                        if(stack.pop()!=='[') return false;
+                        break;
+                    case '}':
+                        if(stack.pop()!=='{') return false;
+                        break;
+                }
+            }
+        }
+    }
+    
+    if(stack.length !==0) return false;
+    
+    return true;
+};
+
+
+
+M: 1000,
+} 
+
+let sum = 0;
+for(let i = 0; i<s.length; i++){
+
+  if(data[s[i]] < data[s[i + 1]]){
+
+   sum -= data[s[i]]
+
+  }else{
+
+   sum += data[s[i]]
+
+  }
+}
+  return sum;
+};
+
+
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+//solution
+
+var longestCommonPrefix = function(arr) {
+
+if (!arr.length) return "";
+
+let prefix = "";
+for (let i = 0; i < arr[0].length; i++) {
+
+    for (let j = 0; j < arr.length-1; j++) {
+
+      console.log(arr.length-1, 'length')
+
+      console.log(arr[j][i], 'arr[j][i]')
+
+      if (arr[j][i] !== arr[j+1][i]) return prefix;
+
+    }
+    prefix += arr[0][i];
+}
+return prefix;
+// Time Complexity: O(M*N), M = length of shortest word, N = length of given array
+// Space Complexity: O(1)
+};
+longestCommonPrefix(["flower","flow","floight", "flo"]);
+
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+
+// Open brackets must be closed in the correct order.
+
+
+//Solution
+
+var isValid = function(s) {
+  let stack = [];
+  
+  // Not paired
+  if(s.length%2 !== 0){
+      return false;
+  }else{
+      for(let i = 0; i < s.length;i++){
+          // Store
+          if(s[i]==='('||s[i]==='['||s[i]==='{'){
+              stack.push(s[i]);
+          }
+          else{
+              switch(s[i]){
+                  case ')':
+                      if(stack.pop()!=='(') return false; 
+                      break;
+                  case ']':
+                      if(stack.pop()!=='[') return false;
+                      break;
+                  case '}':
+                      if(stack.pop()!=='{') return false;
+                      break;
+              }
+          }
+      }
+  }
+  
+  if(stack.length !==0) return false;
+  
+  return true;
+};
