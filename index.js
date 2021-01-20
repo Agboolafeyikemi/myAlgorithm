@@ -1506,4 +1506,33 @@ var isValid = function(s) {
 // repeatedString has the following parameter(s):
 
 // s: a string to repeat
-// n: the number of characters to conside
+// n: the number of characters to consider
+
+//SOLUTION
+
+function repeatedString(s, n) {
+  if(s.length === 1){
+    return n;
+  }
+ let reNum = 0;
+ let counter = 0;
+ let repeated = [];
+
+ while(repeated.length <= n){
+  repeated = s.repeat(reNum);
+  reNum ++
+  if(repeated.length === (n + 2)){
+  for(let i = 0; i < repeated.length; i++){
+    console.log('YES!!')
+  if(repeated[i] === s[0]){
+   counter++
+  }
+}
+ return counter -1 ;
+ }
+}
+
+
+}
+repeatedString('a',
+1000000000000);
