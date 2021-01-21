@@ -1512,17 +1512,15 @@ var isValid = function(s) {
 
 function repeatedString(s, n) {
   let fracNumber = Math.trunc(n / s.length);
-  console.log(fracNumber);
   let reminder = n % s.length;
   let counter = 0;
-  console.log(Math.trunc(10 / 3), 'hihi')
-  console.log(10%3, s.length, n);
+
     for (let index = 0; index < s.length; index++) {
         if (s[index] === 'a') {
             counter++;
         }
     }
-  console.log(counter, 'counter', fracNumber, reminder)
+
   counter = counter * fracNumber;
   for (let index = 0; index < reminder; index++) {
     if (s[index] === 'a') {
