@@ -1511,28 +1511,25 @@ var isValid = function(s) {
 //SOLUTION
 
 function repeatedString(s, n) {
-  if(s.length === 1){
-    return n;
+  let fracNumber = Math.trunc(n / s.length);
+  console.log(fracNumber);
+  let reminder = n % s.length;
+  let counter = 0;
+  console.log(Math.trunc(10 / 3), 'hihi')
+  console.log(10%3, s.length, n);
+    for (let index = 0; index < s.length; index++) {
+        if (s[index] === 'a') {
+            counter++;
+        }
+    }
+  console.log(counter, 'counter', fracNumber, reminder)
+  counter = counter * fracNumber;
+  for (let index = 0; index < reminder; index++) {
+    if (s[index] === 'a') {
+        counter++;
+    }
   }
- let reNum = 0;
- let counter = 0;
- let repeated = [];
-
- while(repeated.length <= n){
-  repeated = s.repeat(reNum);
-  reNum ++
-  if(repeated.length === (n + 2)){
-  for(let i = 0; i < repeated.length; i++){
-    console.log('YES!!')
-  if(repeated[i] === s[0]){
-   counter++
-  }
-}
- return counter -1 ;
- }
+  return counter;
 }
 
-
-}
-repeatedString('a',
-1000000000000);
+repeatedString('abc',10);
