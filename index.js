@@ -1318,10 +1318,6 @@ var longestCommonPrefix = function(arr) {
 
       for (let j = 0; j < arr.length-1; j++) {
 
-        console.log(arr.length-1, 'length')
-
-        console.log(arr[j][i], 'arr[j][i]')
-
         if (arr[j][i] !== arr[j+1][i]) return prefix;
 
       }
@@ -1430,10 +1426,6 @@ var longestCommonPrefix = function(arr) {
 
       for (let j = 0; j < arr.length-1; j++) {
 
-        console.log(arr.length-1, 'length')
-
-        console.log(arr[j][i], 'arr[j][i]')
-
         if (arr[j][i] !== arr[j+1][i]) return prefix;
 
       }
@@ -1509,25 +1501,49 @@ var isValid = function(s) {
 // n: the number of characters to consider
 
 //SOLUTION
-
 function repeatedString(s, n) {
-  let fracNumber = Math.trunc(n / s.length);
-  let reminder = n % s.length;
+  let fracN = Math.trunc(n / s.length);
+  const reminder =  n % s.length ;
   let counter = 0;
-
-    for (let index = 0; index < s.length; index++) {
-        if (s[index] === 'a') {
-            counter++;
-        }
-    }
-
-  counter = counter * fracNumber;
-  for (let index = 0; index < reminder; index++) {
-    if (s[index] === 'a') {
-        counter++;
-    }
-  }
+ 
+   for(let i = 0; i < s.length; i++){
+     if(s[i] == 'a'){
+       counter++
+     }
+   }
+ 
+   counter = counter * fracN;
+ 
+   for(let i = 0; i < reminder; i++){
+     if(s[i] == 'a'){
+       counter++
+     }
+   }
+ 
   return counter;
+ }
+ 
+ repeatedString("aba", 10);
+
+function minimumDistances(a) {
+  const count = {};
+  let firstIndex;
+  let secondIndex;
+  for (let i = 0; i < a.length; i++){
+    count[a[i]] = (count[a[i]] || 0) + 1;
+ }
+  for(let j in count){
+  if(count[j] > 1) {
+    firstIndex = a.indexOf(parseInt(j));
+    // console.log(firstIndex)
+  }
+  
+  if(firstIndex){
+    console.log(firstIndex, 'firstIndex')
+      secondIndex = a.indexOf(parseInt(j), firstIndex);
+    }
+    console.log(firstIndex, secondIndex , j);
+  }
 }
 
-repeatedString('abc',10);
+minimumDistances([3,2,1,2,3]);
