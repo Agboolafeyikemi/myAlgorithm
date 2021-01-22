@@ -956,7 +956,6 @@ function threeSum(nums) {
   
   
   ht.keys().forEach(function(key){
-    console.log(ht.get(key));
   })
 
 
@@ -1041,8 +1040,6 @@ maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
 var topKFrequent = function(nums, k) {
   obj = {};
   nums.forEach((num)=> obj[num] = (obj[num]||0) + 1);
-  console.log(Object.keys(obj).sort((a,b)=> obj[b]-obj[a]))
-  console.log(obj)
   return Object.keys(obj).sort((a,b)=> obj[b]-obj[a]).slice(0,k)
 }
 
@@ -1208,11 +1205,9 @@ function findMin(nums) {
 
   let r = nums.length - 1;
 
-  // console.log(r)
   while (l < r) {
     const m = Math.floor((l + r) / 2);
 
-    // console.log(m)
     if (nums[m] > nums[r]) l = m + 1;
 
     else r = m;
@@ -1535,11 +1530,9 @@ function minimumDistances(a) {
   for(let j in count){
   if(count[j] > 1) {
     firstIndex = a.indexOf(parseInt(j));
-    // console.log(firstIndex)
   }
   
   if(firstIndex){
-    console.log(firstIndex, 'firstIndex')
       secondIndex = a.indexOf(parseInt(j), firstIndex);
     }
     console.log(firstIndex, secondIndex , j);
