@@ -1520,24 +1520,21 @@ function repeatedString(s, n) {
  
  repeatedString("aba", 10);
 
+
 function minimumDistances(a) {
-  const count = {};
-  let firstIndex;
-  let secondIndex;
-  for (let i = 0; i < a.length; i++){
-    count[a[i]] = (count[a[i]] || 0) + 1;
- }
-  for(let j in count){
-  if(count[j] > 1) {
-    firstIndex = a.indexOf(parseInt(j));
-  }
-  
-  if(firstIndex){
-      secondIndex = a.indexOf(parseInt(j), firstIndex);
+  let arr = []
+  let lastNum =  a.length - 1;
+  for(let i = 0; i < a.length; i++){
+    while( i < lastNum){
+      if(a[i] === a[lastNum]){
+       arr.push(Math.abs(i - lastNum));
+         lastNum --
+      }else{
+        i++
+      }
     }
-    console.log(firstIndex, secondIndex , j);
+
   }
+  return Math.min(...arr)
 }
-
-minimumDistances([3,2,1,2,3]);
-
+minimumDistances([1, 2, 3, 4 ,10]);
