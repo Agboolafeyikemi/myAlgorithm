@@ -1549,3 +1549,20 @@ minimumDistances([1, 2, 3, 4 ,10]);
 // Write an efficient algorithm for the following assumptions:
 // N is an integer within the range [1..2,147,483,647].
 // Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+
+//SOLUTION
+
+function minimumDistances(a) {
+  let lastseen = {};
+  let dist = -1;
+  [...a].forEach((v, i) => {
+      if (lastseen.hasOwnProperty(v)) {
+        let thisdist = i - lastseen[v];
+        dist = Math.min(thisdist, (dist === -1 ? thisdist : dist));
+      }
+      lastseen[v] = i;
+  })
+return dist;
+}
+
+minimumDistances([3,2,1,2,3]);
