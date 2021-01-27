@@ -1566,3 +1566,21 @@ return dist;
 }
 
 minimumDistances([3,2,1,2,3]);
+
+function minimumDistances(a) {
+  let lastseen = {};
+  let dist = -1;
+ a.forEach((num, i) => {
+   if(lastseen[num]){
+   const  thisDist = i - lastseen[num]
+   dist = Math.min(thisDist, dist=== -1 ? dist:thisDist)
+     
+   }else{
+    lastseen[num] = i;
+   }
+ });
+
+return dist;
+}
+
+minimumDistances([3,2,1,2,3]);
