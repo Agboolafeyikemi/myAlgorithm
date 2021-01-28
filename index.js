@@ -1552,19 +1552,6 @@ minimumDistances([1, 2, 3, 4 ,10]);
 
 //SOLUTION
 
-function minimumDistances(a) {
-  let lastseen = {};
-  let dist = -1;
-  [...a].forEach((v, i) => {
-      if (lastseen.hasOwnProperty(v)) {
-        let thisdist = i - lastseen[v];
-        dist = Math.min(thisdist, (dist === -1 ? thisdist : dist));
-      }
-      lastseen[v] = i;
-  })
-return dist;
-}
-
 minimumDistances([3,2,1,2,3]);
 
 function minimumDistances(a) {
@@ -1573,7 +1560,7 @@ function minimumDistances(a) {
  a.forEach((num, i) => {
    if(lastseen[num]){
    const  thisDist = i - lastseen[num]
-   dist = Math.min(thisDist, dist=== -1 ? dist:thisDist)
+   dist = Math.min(thisDist, dist=== -1 ? thisDist:dist)
      
    }else{
     lastseen[num] = i;
