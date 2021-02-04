@@ -1601,3 +1601,27 @@ minimumDistances([3,2,1,2,3]);
 // N is an odd integer within the range [1..1,000,000];
 // each element of array A is an integer within the range [1..1,000,000,000];
 // all but one of the values in A occur an even number of times.
+
+
+//SOLUTION
+
+function solution(A) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  const obj = {}
+  for(let i = 0; i< A.length; i++){
+    if(obj[A[i]]){
+       obj[A[i]] += 1;
+    }else{
+      obj[A[i]] = 1;
+    }
+  }
+  console.log(obj)
+  for(let num in obj){
+    if(obj[num] === 1){
+      return parseInt(num)
+    }
+  }
+  
+}
+
+solution([ 9, 3, 9, 3, 9, 7, 9 ]);
