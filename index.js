@@ -1571,3 +1571,15 @@ minimumDistances([1, 2, 3, 4 ,10]);
 convertToRoman(36);
 	 
 	 
+function palindrome(str) {
+ str = str.toLowerCase()
+  str = str.replace(/[^a-z0-9]/g, '');
+  let backward = str.split('');
+  backward = backward.reverse().join('').toString();
+  if(str === backward) {
+    return true;
+  }
+
+  return false;
+}
+palindrome("eye");
